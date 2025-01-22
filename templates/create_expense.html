@@ -1,0 +1,32 @@
+
+{% extends "base.html" %}
+
+{% block title %} Create Expensec{% endblock title %}
+
+{% block body %}
+
+<div class="container ">
+
+    <form method="post">
+
+        {% csrf_token %}
+    <div class="mb-3">
+      <label for="expense" class="form-label" >Expense Name</label>
+      <input type="text" class="form-control" name="expense" placeholder="Your Name">
+    </div>
+    <div class="mb-3">
+      <label for="description" class="form-label" >Description</label>
+      <textarea class="form-control" name="description" placeholder="Description Here"></textarea>
+    </div>
+    <div class="mb-3">
+        <label for="amount" class="form-label">Amount</label>
+        <input type="number" value="0" class="form-control" name="amount">
+    </div>
+    <div class="mb-3">
+      <label for="readonlyInput" class="form-label">Transaction Type </label>
+      <input type="text" class="form-control" id="readonlyInput" value="Expense" name="type" readonly>
+    </div>
+    <button type="submit" class="btn btn-primary">Submit</button>
+</form>
+</div>
+{% endblock body %}
